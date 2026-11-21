@@ -28,7 +28,11 @@ async def lifespan(app):
 
 app = FastAPI(title="Risk Orchestrator", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+from fastapi.responses import RedirectResponse
 
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse("/docs")
 
 class RunIn(BaseModel):
     process_code: str
