@@ -49,7 +49,7 @@ python simulator\simulate.py --scale 1
 
 ## Документы
 
-- `docs/analysis_and_requirements.md`: узкие места, ИИ-анализ, системные требования, варианты решения.
+- [](docs/analysis_and_requirements) : узкие места, ИИ-анализ, системные требования, варианты решения.
 
 ## Ограничения MVP
 
