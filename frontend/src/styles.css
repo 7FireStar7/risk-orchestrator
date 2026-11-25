@@ -1,3 +1,4 @@
+/* ===== Переменные темы ===== */
 :root {
   --bg: #0b0f17;
   --panel: #121826;
@@ -10,33 +11,41 @@
   --warn: #f59e0b;
   --bad: #f87171;
 }
+
+/* ===== База ===== */
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font:
-    14px/1.45 system-ui,
-    "Segoe UI",
-    sans-serif;
+  font: 14px/1.45 system-ui, "Segoe UI", sans-serif;
 }
+
 h1 {
   font-size: 17px;
   margin: 0;
 }
+
 h2 {
   font-size: 15px;
   margin: 0 0 12px;
 }
+
 small,
 .mute {
   color: var(--mute);
 }
 
-/* ===== Шапка и навигация ===== */
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+}
 
+/* ===== Шапка и навигация ===== */
 .top {
   display: flex;
   align-items: center;
@@ -49,23 +58,24 @@ small,
   z-index: 5;
 }
 
-brand {
+.brand {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-logo {
+.logo {
   font-size: 26px;
   color: var(--accent);
 }
+
 nav {
   display: flex;
   gap: 4px;
   flex: 1;
 }
 
-tab {
+.tab {
   background: none;
   border: 0;
   color: var(--mute);
@@ -75,44 +85,40 @@ tab {
   font-size: 14px;
 }
 
-tab:hover {
+.tab:hover {
   color: var(--text);
 }
 
-tab.on {
+.tab.on {
   background: var(--panel2);
   color: var(--text);
   box-shadow: inset 0 -2px var(--accent);
 }
 
-actions {
+.actions {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-dot {
+.dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
   display: inline-block;
 }
 
-dot.ok {
+.dot.ok {
   background: var(--ok);
   box-shadow: 0 0 8px var(--ok);
 }
 
-dot.bad {
+.dot.bad {
   background: var(--bad);
 }
-main {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px 24px 60px;
-}
 
-btn {
+/* ===== Кнопки ===== */
+.btn {
   border: 1px solid var(--line);
   background: var(--panel2);
   color: var(--text);
@@ -122,16 +128,16 @@ btn {
   font-size: 13px;
 }
 
-btn:hover {
+.btn:hover {
   border-color: var(--accent);
 }
 
-btn.danger:hover {
+.btn.danger:hover {
   border-color: var(--bad);
   color: var(--bad);
 }
 
-btn.primary {
+.btn.primary {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
@@ -141,19 +147,18 @@ btn.primary {
   width: 100%;
 }
 
-btn.primary:disabled {
+.btn.primary:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-btn.tiny {
+.btn.tiny {
   padding: 3px 10px;
   font-size: 12px;
   margin-top: 6px;
 }
 
-/* ===== Карточки и KPI ===== */
-
+/* ===== Счётчики (KPI) ===== */
 .kpis {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -161,7 +166,7 @@ btn.tiny {
   margin-bottom: 16px;
 }
 
-kpi {
+.kpi {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -169,49 +174,50 @@ kpi {
   border-top: 3px solid var(--line);
 }
 
-kpi .v {
+.kpi .v {
   font-size: 26px;
   font-weight: 700;
 }
 
-kpi .l {
+.kpi .l {
   color: var(--mute);
   font-size: 12px;
 }
 
-kpi.run {
+.kpi.run {
   border-top-color: var(--accent);
 }
 
-kpi.queue {
+.kpi.queue {
   border-top-color: var(--warn);
 }
 
-kpi.done {
+.kpi.done {
   border-top-color: var(--ok);
 }
 
-kpi.fail {
+.kpi.fail {
   border-top-color: var(--bad);
 }
 
-kpi.lock {
+.kpi.lock {
   border-top-color: #a78bfa;
 }
 
-kpi.wait .v {
+.kpi.wait .v {
   font-size: 20px;
   padding-top: 5px;
 }
 
-cols {
+/* ===== Карточки и запуски ===== */
+.cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 16px;
 }
 
-card {
+.card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -219,11 +225,11 @@ card {
   margin-bottom: 16px;
 }
 
-cols .card {
+.cols .card {
   margin-bottom: 0;
 }
 
-cnt {
+.cnt {
   background: var(--panel2);
   border-radius: 10px;
   padding: 1px 9px;
@@ -231,14 +237,14 @@ cnt {
   color: var(--mute);
 }
 
-row {
+.row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
 }
 
-item {
+.item {
   background: var(--panel2);
   border-left: 4px solid var(--accent);
   border-radius: 8px;
@@ -246,30 +252,31 @@ item {
   margin-bottom: 8px;
 }
 
-item.queued {
+.item.queued {
   border-left-style: dashed;
 }
 
-sub {
+.sub {
   color: var(--mute);
   font-size: 12px;
   margin-top: 2px;
 }
 
-why {
+.why {
   margin-top: 6px;
   color: var(--warn);
   font-size: 12.5px;
 }
 
-pulse {
+.pulse {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: var(--ok);
-  animation: p 1.2s infinite;
+  animation: pulse 1.2s infinite;
 }
-@keyframes p {
+
+@keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 #34d39988;
   }
@@ -278,26 +285,29 @@ pulse {
   }
 }
 
-badge {
+.badge {
   padding: 1px 8px;
   border-radius: 10px;
   font-size: 11px;
   border: 1px solid var(--line);
 }
 
-badge.SCHEDULED {
+.badge.SCHEDULED {
   color: #7dd3fc;
   border-color: #7dd3fc55;
 }
 
-badge.MANUAL {
+.badge.MANUAL {
   color: #fcd34d;
   border-color: #fcd34d55;
 }
+
+/* ===== Таблицы ===== */
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th {
   text-align: left;
   color: var(--mute);
@@ -306,28 +316,32 @@ th {
   padding: 6px 8px;
   border-bottom: 1px solid var(--line);
 }
+
 td {
   padding: 7px 8px;
   border-bottom: 1px solid #1a2336;
 }
 
-st.DONE {
+.st.DONE {
   color: var(--ok);
 }
 
-st.FAILED {
+.st.FAILED {
   color: var(--bad);
 }
 
-st.CANCELLED {
+.st.CANCELLED {
   color: var(--mute);
 }
+
+/* ===== Форма нового запуска ===== */
 label {
   display: block;
   color: var(--mute);
   font-size: 12px;
   margin-bottom: 12px;
 }
+
 input,
 select {
   display: block;
@@ -341,13 +355,14 @@ select {
   font-size: 14px;
   color-scheme: dark;
 }
+
 input:focus,
 select:focus {
   outline: none;
   border-color: var(--accent);
 }
 
-seg2 {
+.seg2 {
   display: inline-flex;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -355,7 +370,7 @@ seg2 {
   margin-top: 4px;
 }
 
-seg2 button {
+.seg2 button {
   background: var(--panel2);
   border: 0;
   color: var(--mute);
@@ -363,57 +378,55 @@ seg2 button {
   cursor: pointer;
 }
 
-seg2 button.on {
+.seg2 button.on {
   background: var(--accent);
   color: #fff;
 }
 
-verdict {
+.verdict {
   padding: 10px 12px;
   border-radius: 8px;
   margin-bottom: 12px;
   font-weight: 500;
 }
 
-verdict.ok {
+.verdict.ok {
   background: #34d39918;
   color: var(--ok);
 }
 
-verdict.warn {
+.verdict.warn {
   background: #f59e0b18;
   color: var(--warn);
 }
 
-verdict.bad {
+.verdict.bad {
   background: #f8717118;
   color: var(--bad);
 }
 
-chips {
+.chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-chip {
+.chip {
   background: var(--panel2);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 3px 9px;
-  font:
-    12px ui-monospace,
-    Consolas,
-    monospace;
+  font: 12px ui-monospace, Consolas, monospace;
 }
 
-chip.busy {
+.chip.busy {
   border-color: var(--bad);
   color: var(--bad);
   background: #f8717112;
 }
 
-legend {
+/* ===== Таймлайн ===== */
+.legend {
   display: flex;
   gap: 18px;
   align-items: center;
@@ -422,7 +435,7 @@ legend {
   color: var(--mute);
 }
 
-sw {
+.sw {
   display: inline-block;
   width: 14px;
   height: 10px;
@@ -431,34 +444,26 @@ sw {
   margin-right: 4px;
 }
 
-hatch,
+.hatch,
 .bar.wait {
-  background: repeating-linear-gradient(
-    45deg,
-    #3b4763,
-    #3b4763 4px,
-    #2a3450 4px,
-    #2a3450 8px
-  );
+  background: repeating-linear-gradient(45deg, #3b4763, #3b4763 4px, #2a3450 4px, #2a3450 8px);
 }
 
-sw.fail,
+.sw.fail,
 .bar.run.FAILED {
   background: var(--bad);
 }
-
-/* ===== Таймлайн ===== */
 
 .gantt {
   overflow-x: auto;
 }
 
-grow {
+.grow {
   display: flex;
   border-bottom: 1px solid #1a2336;
 }
 
-glabel {
+.glabel {
   width: 170px;
   flex: none;
   padding: 8px 8px 0 0;
@@ -466,13 +471,13 @@ glabel {
   font-size: 13px;
 }
 
-gtrack {
+.gtrack {
   position: relative;
   flex: 1;
   min-width: 600px;
 }
 
-bar {
+.bar {
   position: absolute;
   height: 22px;
   border-radius: 5px;
@@ -486,50 +491,52 @@ bar {
   cursor: default;
 }
 
-bar.wait {
+.bar.wait {
   color: transparent;
   opacity: 0.85;
 }
 
-bar.wait.cancelled {
+.bar.wait.cancelled {
   opacity: 0.35;
 }
 
-bar.run.RUNNING {
+.bar.run.RUNNING {
   animation: glow 1.5s infinite alternate;
 }
+
 @keyframes glow {
   to {
     filter: brightness(1.35);
   }
 }
 
-bar.run.CANCELLED {
+.bar.run.CANCELLED {
   opacity: 0.45;
 }
 
-axisrow {
+.axisrow {
   height: 24px;
 }
 
-axisrow span {
+.axisrow span {
   position: absolute;
   font-size: 11px;
   color: var(--mute);
   transform: translateX(-30%);
 }
 
-matrix td,
+/* ===== Матрица и журнал ===== */
+.matrix td,
 .matrix th {
   text-align: center;
 }
 
-matrix .pn {
+.matrix .pn {
   text-align: left;
   font-weight: 500;
 }
 
-mdot {
+.mdot {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -537,60 +544,56 @@ mdot {
   background: var(--accent);
 }
 
-matrix .sum td {
+.matrix .sum td {
   border-top: 1px solid var(--line);
 }
 
-filters {
+.filters {
   display: flex;
   gap: 8px;
 }
 
-filters input,
+.filters input,
 .filters select {
   margin: 0;
   width: 150px;
   padding: 6px 8px;
 }
 
-det {
+.det {
   color: var(--mute);
   font-size: 12.5px;
 }
 
-/* ===== Журнал и матрица ===== */
-
 .ev {
-  font:
-    11.5px ui-monospace,
-    Consolas,
-    monospace;
+  font: 11.5px ui-monospace, Consolas, monospace;
   padding: 1px 7px;
   border-radius: 5px;
   background: var(--panel2);
 }
 
-ev.STARTED {
+.ev.STARTED {
   color: var(--accent);
 }
 
-ev.DONE {
+.ev.DONE {
   color: var(--ok);
 }
 
-ev.WAITING {
+.ev.WAITING {
   color: var(--warn);
 }
 
-ev.FAILED {
+.ev.FAILED {
   color: var(--bad);
 }
 
-ev.CANCELLED {
+.ev.CANCELLED {
   color: var(--mute);
 }
 
-toast {
+/* ===== Уведомления ===== */
+.toast {
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -601,16 +604,20 @@ toast {
   box-shadow: 0 8px 30px #0008;
 }
 
-toast.bad {
+.toast.bad {
   border-color: var(--bad);
 }
+
+/* ===== Узкие экраны ===== */
 @media (max-width: 900px) {
   .kpis {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .cols {
     grid-template-columns: 1fr;
   }
+
   .top {
     flex-wrap: wrap;
   }
